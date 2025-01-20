@@ -1,14 +1,9 @@
 pipeline {
     agent any
 
-  /*  environment {
-        SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/your/slack/webhook" // Replace with your Slack Webhook URL
-    }*/
-
     stages {
         stage('Install Dependencies') {
             steps {
-                retry(3) { // Retry mechanism for this stage
                 bat 'npm install'
             }
         }
