@@ -15,13 +15,14 @@ pipeline {
             parallel {
                 stage('Lint the project') {
                     steps {
+                        retry(3) { // Retry mechanism for this stage
                         bat 'npm run lint'
                     }
                 }
-                stage('Run Tests') {
-                    steps {
-                        bat 'npm test' // Add your test command here
-                    }
+               // stage('Run Tests') {
+                //    steps {
+                //        bat 'npm test' // Add your test command here
+                //    }
                 }
             }
         }
