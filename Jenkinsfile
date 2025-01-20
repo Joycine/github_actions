@@ -11,21 +11,7 @@ pipeline {
                 bat 'npm install'
             }
         }
-         /* stage('Lint and Test in Parallel') {
-            parallel {
-                stage('Lint the project') {
-                    steps {
-                        retry(3) { // Retry mechanism for this stage
-                        bat 'npm run lint'
-                    }
-                }
-               // stage('Run Tests') {
-                //    steps {
-                //        bat 'npm test' // Add your test command here
-                //    }
-                }
-            }
-        }*/
+         
         stage('Lint the project') {
             steps {
                 bat 'npm run lint'
