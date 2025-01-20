@@ -11,7 +11,7 @@ pipeline {
                 bat 'npm install'
             }
         }
-          stage('Lint and Test in Parallel') {
+         /* stage('Lint and Test in Parallel') {
             parallel {
                 stage('Lint the project') {
                     steps {
@@ -24,6 +24,11 @@ pipeline {
                 //        bat 'npm test' // Add your test command here
                 //    }
                 }
+            }
+        }*/
+        stage('Lint the project') {
+            steps {
+                bat 'npm run lint'
             }
         }
           stage('Generate a production build') {
