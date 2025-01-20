@@ -12,14 +12,14 @@ pipeline {
                 bat 'npm run lint'
             }
         }
-          stage('Generate a production build') {
+          stage('Generate a webhook build') {
             steps {
                 bat 'npm run build'
             }
         }
-          stage('Deploy to GCP') {
+          stage('Deploy') {
             steps {
-                echo 'Deploying to GCP.......'
+                echo 'Deploying.......'
             }
         }
           stage('Application Deployed') {
